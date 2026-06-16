@@ -246,49 +246,104 @@
 
 
 
-import pandas as pd 
-import numpy as np 
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, r2_score
+# import pandas as pd 
+# import numpy as np 
+# from sklearn.model_selection import train_test_split
+# from sklearn.linear_model import LinearRegression
+# from sklearn.metrics import mean_squared_error, r2_score
 
-house = pd.read_csv("house_data.csv")
-print("Data preview")
-print(house.head())
+# house = pd.read_csv("house_data.csv")
+# print("Data preview")
+# print(house.head())
 
-x = house[['square_feet']]
-y = house[['price']]
-3
-x_train, x_test, y_train, y_test = train_test_split(
-    x,y, test_size=0.2, random_state=20
-)
+# x = house[['square_feet']]
+# y = house[['price']]
+# 3
+# x_train, x_test, y_train, y_test = train_test_split(
+#     x,y, test_size=0.2, random_state=20
+# )
 
-model = LinearRegression()
-model.fit(x_train, y_train)
+# model = LinearRegression()
+# model.fit(x_train, y_train)
 
-y_pred = model.predict(x_test)
+# y_pred = model.predict(x_test)
 
-house_price = float(input("Enter your cost: "))
+# house_price = float(input("Enter your cost: "))
 
-print("MSE:", mean_squared_error(y_test, y_pred))
-print("R2 Score:", r2_score(y_test, y_pred))
+# print("MSE:", mean_squared_error(y_test, y_pred))
+# print("R2 Score:", r2_score(y_test, y_pred))
 
-input_house = pd.DataFrame([[house_price]], columns=['square_feet'])
-prediction = model.predict(input_house)[0][0]
-prediction = round(prediction,2)
+# input_house = pd.DataFrame([[house_price]], columns=['square_feet'])
+# prediction = model.predict(input_house)[0][0]
+# prediction = round(prediction,2)
 
-def get_area(price):
-    if price >= 400000:
-        return "High price"
-    elif price >= 350000:
-        return "Medium price"
-    elif price >= 250000:
-        return "Normal price"
-    elif price >= 150000:
-        return "Low price"
-    else:
-        return "Lowest price"
+# def get_area(price):
+#     if price >= 400000:
+#         return "High price"
+#     elif price >= 350000:
+#         return "Medium price"
+#     elif price >= 250000:
+#         return "Normal price"
+#     elif price >= 150000:
+#         return "Low price"
+#     else:
+#         return "Lowest price"
         
 
-print("Predicted Price:",prediction)
-print("predicted Area:",get_area(prediction))
+# print("Predicted Price:",prediction)
+# print("predicted Area:",get_area(prediction))
+
+import pandas as pd 
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import LabelEncoder
+
+
+data = pd.read_csv("loan.csv")
+print(data.head())
+print(data.tail())
+
+data = data.drop(columns=["Loan_ID"])
+data = data.ffill()
+data = data.bfill()
+data = data.dropna()
+print(data.dtypes)
+le = LabelEncoder()
+for col in data.columns:
+    if data[col].dtype == "object" or data[col].dtype == "str":
+        data[col] = LabelEncoder().fit_transform(data[col].astype(str))
+        
+x = data.drop("Loan_Status", axis = 1)
+y = data["Loan_Status"]
+
+model = LogisticRegression(max_iter = 2000)
+model.fit(x,y)
+
+Gender = int(input("Gender(Male=1, Female =0):"))
+Married = int(input("Married (Yes=1, No=0): "))
+Dependents = int(input("Dependents (0,1,2,3): "))
+Education = int(input("Education (Graduate=1, Not=0): "))
+Self_Employed = int(input("Self Employed (Yes=1, No=0): "))
+ApplicantIncome = float(input("Applicant Income: "))
+CoapplicantIncome = float(input("Coapplicant Income:"))
+LoanAmount = float(input("Loan Amount: "))
+Loan_Amount_Term = float(input("Loan Term: "))
+Credit_History = int(input("Credit History (1 or 0): "))
+Property_Area = int(input("Property Area (Urban=2, Semi=1, Rural=0): "))
+
+
+
+input_df =pd.DataFrame([[
+    Gender, Married, Dependents, Education, Self_Employed,
+    ApplicantIncome, CoapplicantIncome,LoanAmount, Loan_Amount_Term,
+    Credit_History, Property_Area
+]], columns=x.columns)
+
+prediction = model.predict(input_df)
+
+if prediction[0] == 1:
+    print("\n Yes Loan Approved")
+else:
+    print("\n No Loan Rejected")
+    
+prob = model.predict_proba(input_df)
+print("Approval Probability:", prob[0][1])

@@ -427,7 +427,7 @@ for i in range(rows):
 # print(func_lambda(21))
 
 # Try catch
- 
+
 # while True:
 #     try:
 #         def num (name, age, course,):
