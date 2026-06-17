@@ -347,3 +347,8 @@ else:
     
 prob = model.predict_proba(input_df)
 print("Approval Probability:", prob[0][1])
+
+
+
+
+
