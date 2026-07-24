@@ -445,23 +445,368 @@ for i in range(rows):
         
         
         
-while True:
-    try:
-        def num (name, age, course,):
-            return
-        name=(input("enter your name: "))
-        age=(input("enter  your age: "))
-        course = (input("Enter your course: "))
+# while True:
+#     try:
+#         def num (name, age, course,):
+#             return
+#         name=(input("enter your name: "))
+#         age=(input("enter  your age: "))
+#         course = (input("Enter your course: "))
         
-        result = num(name, age, course)
-        print(result)
-        if name==name:
-            continue
-        elif age==age:
-            continue
-        elif course==course:
-            print ("data uploaded")
-            break
-    except:
-        print("give the full details")
+#         result = num(name, age, course)
+#         print(result)
+#         if name==name:
+#             continue
+#         elif age==age:
+#             continue
+#         elif course==course:
+#             print ("data uploaded")
+#             break
+#     except:
+#         print("give the full details")
             
+            
+# while True:
+#     try:
+#         num1 = int(input("Enter num1: "))
+#         num2 = int(input("Enter num2: "))
+#         operator = input("Enter Operator, To exit Enter X : ")
+        
+#     except:
+#         print("Invalid number")
+#         continue
+        
+#     if operator == "+":
+#         print(num1 + num2)
+#     elif operator == "-":
+#         print(num1-num2)
+#     elif operator == "/":
+#         try:
+#             print(num1/num2)
+#         except:
+#             print("Try Another number")
+#     elif operator == "*":
+#         print(num1*num2)
+#     elif operator == "%":
+#         print(num1%num2)
+#     elif operator == "X":
+#         break
+#     else:
+#         print("Invalid  Number")
+
+
+'''Mark = int(input("Enter mark: "))
+if Mark >= 90 :
+    print("A Grade")
+elif Mark >= 75:
+    print("B Grade")
+elif Mark >= 50:
+    print("C Grade")
+else:
+    print("Failed")'''
+    
+    
+'''Age = int(input("Enter your Age: "))
+if Age >= 90 :
+    print("A Grade")
+elif Age < 13:
+    print(" Child")
+elif Age < 20:
+    print("Teenager")
+elif Age < 60 :
+    print("Adult")
+else:
+    print("Senior Citizen")'''
+    
+    
+   
+'''vowel = ["A", "E", "I","O","U", "a","e","i","o","u"]
+letter = input("Enter a Letter: ")
+
+if letter in vowel:
+    print("Its vowel")
+else:
+    print("Its not a vowel")'''
+# if letter.lower() == "a" or letter.lower() == "e":
+#     print("Yes")
+
+# word = "shEljin"
+# vowels = ["a", "e", "i", "o", "u"]
+
+# count = 0
+# for char in word:
+#     if char.lower()  in vowels :
+#         count += 1
+    
+# print(count)
+
+
+
+# word = "rithinrose"
+# vowels = ["a", "e", "i", "o", "u"]
+
+# count = 0
+# for char in word:
+#     if char.lower() not in vowels :
+#         count += 1
+    
+# print(count)
+
+
+
+'''word = "rithin rose"
+reverse = ""
+
+for char in word:
+    reverse = char + reverse
+print(reverse)'''
+
+
+'''
+word = "olo"
+if word == word[::-1]:
+    print("its palindrom")
+else:
+    print("not palindrom")'''
+    
+    
+    
+    
+# num = 5
+
+# fact = 1
+# for i in range(1, num + 1):
+#     fact*=i
+# print(fact)
+
+# human = ["rose", "rithin","sheljin","rose"]
+# name = []
+
+# for i in human:
+#     if i in name:
+#         # print(name)
+#         ...
+#     else:
+#         name.append(i)
+#         # print(i)
+
+# print(name)
+
+# print(set(human))
+
+
+'''number = [12,43,56,78,98]
+
+max = number[0] # 12
+for result in number: # 43
+    if result > max: # 43 > 12 -> True
+        max = result
+print(result)'''
+
+
+
+'''num = [12,34,56,78,90]
+
+min = num[0]
+for i  in num:
+    if i < min:
+        min = i
+print(min)'''
+
+
+# num = [12,34,56,78,90]
+
+# sum = 0
+# for i in num:
+#     sum = sum + i
+# print(sum)
+
+
+# def fib(n):
+    
+#     a = 0
+#     b = 1
+    
+#     if n == 1:
+#         print(a)
+#     else:
+#         print(a)
+#         print(b)
+        
+#         for i in range(4):
+            
+#             c = a+b
+#             a = b
+#             b = c
+            
+#             if c < 100:
+#                 print(c)
+                
+# # user = int(input("Enter the value: "))
+# # n = user
+# # fib(n)
+
+# n = -1
+# # 0,1,1,2,3,5,8,13,21,34,55,....
+
+# res = [0, 1]
+
+# for i in range(n-2):
+#     new_fib = res[-1] + res[-2]
+#     res.append(new_fib)
+
+# print(res)
+
+
+
+'''pyramid'''
+
+# n = 1
+
+# for i in range(1,6):
+#     print(n * i)
+
+
+'''reversed_pyramid'''
+# n = ("*")
+# count = 5
+
+# for i in range(5):
+#     print(n * (count - i))
+
+
+
+# n = 10
+
+# for i in range(n-1):
+#     print("*" * i)
+
+# for i in range(1,n):
+#     print("*" * (n-i))
+
+
+
+# n = ("-")
+
+# for i in range(10-1):
+#     print(n * i)
+
+# for i in range(1,10):
+#     print(n * (10 -i))
+
+
+
+# n = ("*")
+
+# for i in range(1,6):
+#     print(n * i, "!")
+    
+  
+# n = ("*")  
+
+# for i in range(1,6):
+#     print(n * (7 -i))
+# for i in range(1,8-1):
+#     print(n * i)
+
+
+# n = (" ")
+
+# for i in range(6+1):
+#     print((n * (7-i)+ "*"))
+
+
+# n = (" ")
+
+# for i in range(6+1):
+#     print((n * (7-i)+ "*" * i))
+
+
+# for i in range(5, 0, -1):
+#     print("*" * i)
+
+
+
+# n = " "
+
+# for i in range(5,0,-1):
+#     print((n * i)+ "*" * i)
+
+
+
+
+# n = 5
+
+# for i in range(5):
+#     print("*" * n )
+
+
+# for i in range(1, 8):
+#     print(" " * (7 - i) + "*" * i)
+    
+# for i in  range(1,6):
+#     print(" " *(5-i)+ "*" * i+ "*" * (i -1))
+
+
+# for i in  range(6,0,-1):
+#     print(" " *(7-i)+ "*" * i+ "*" * (i -1))
+
+
+
+# for i in range(0,5):
+#     print(" " *(4-i)+ "*" + "-" * i+ "-" * (i -1)+"*")
+    
+# print("**********")
+
+"""
+  1
+ 234
+56789
+
+
+1
+23
+456
+7891
+12345
+"""
+
+
+# n = ["1","2","3","4","5","6","7","8","9","10"]
+# length = 3
+
+# count = 0           # 0
+
+# for i in range(length):
+#     for _ in range(i):
+#         print(n[count])
+#         count += 1
+        
+#         if count >= 10:
+#             count = 0
+
+# num = 1
+# for i in range(1,5):
+#     num = num + 1
+#     for j in range(i):
+#             num = num + 1
+#             print(i)
+
+
+num = 1
+val = 5
+
+for i in range(1,5):
+    print(" " * (val - i), end="")
+    
+    for j in range(2*i-1):
+        print(num, end="")
+        num += 1
+        
+        if num > 10:
+            num = 1
+    print()
+
+
+
+
