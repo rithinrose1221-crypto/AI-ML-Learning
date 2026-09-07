@@ -59,7 +59,6 @@ plt.scatter(
     label = "Normal Customer"
 )
 
-
 print("\nIsolation Forest Completed")
 
 
@@ -70,7 +69,7 @@ plt.scatter(
         s = 120,
         marker = "X",
         edgecolors = "black",
-        label = "Normal Customer"
+        label = "Outlier Customer"
 )
 
 plt.title("Isolation Forest - Outlier Detection")
